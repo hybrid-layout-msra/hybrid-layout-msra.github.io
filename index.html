@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="ART: Anonymous Region Transformer for Variable Multi-Layer Transparent Image Generation">
+    content="Hybrid Layout Control for Diffusion Transformer: Fewer Annotations, Superior Aesthetics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ART: Anonymous Region Transformer for Variable Multi-Layer Transparent Image Generation
+  <title>Hybrid Layout Control for Diffusion Transformer:\\ Fewer Annotations, Superior Aesthetics
   </title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -179,19 +179,30 @@
             border: none; /* 可选：移除 iframe 边框 */
     }
 
+    .carousel-page img {
+      max-height: 250px;
+      width: auto;
+    }
     .container-row {
       display: flex;
-      justify-content: space-between; /* 均匀分布图片 */
-      margin-bottom: 20px;  /* 行间距 */
-      width: 100%;
+      flex-wrap: wrap;               /* 自动换行 */
+      justify-content: center;       /* 居中排列 */
+      gap: 10px;                     /* 图片之间的间距 */
+      margin-bottom: 20px;
     }
 
     .container-row img {
-      flex: 1;             /* 等分容器宽度 */
-      height: 300px;       /* 固定高度 */
-      object-fit: cover;   /* 保持比例填充高度 */
-      margin: 0 5px;       /* 图片间距 */
-      border-radius: 4px;  /* 可选圆角 */
+      max-width: 100%;               /* 防止图片溢出容器 */
+      width: calc(20% - 10px);       /* 平均5列，减去间距 */
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* 小屏幕自适应（比如手机端） */
+    @media (max-width: 768px) {
+      .container-row img {
+        width: calc(50% - 10px);     /* 改为2列 */
+      }
     }
   </style>
 
@@ -200,89 +211,59 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 ">ART: Anonymous Region Transformer for Variable Multi-Layer Transparent Image
-              Generation</h1>
+            <h1 class="title is-1 ">Hybrid Layout Control for Diffusion Transformer: Fewer Annotations, Superior Aesthetics</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Yifan_Pu1">Yifan Pu</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+                <a href="https://kemingwu.github.io/">Keming Wu</a><sup>1*</sup>&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Yiming_Zhao3">Yiming Zhao</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+                <a href="https://www.microsoft.com/en-us/research/">Junwen Chen</a><sup>3*</sup>&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Zhicong_Tang1">Zhicong Tang</a>&nbsp;&nbsp;&nbsp;
+                <a href="https://www.microsoft.com/en-us/research/">Zhanhao Liang</a><sup>2*</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=bRw2KEcAAAAJ&gmla=AJsN-F7nLzgMVO6ItXL6uXXwEYTyOInEvBZK9sk7k7Fld2L5SB2W4fP">Ruihong Yin</a>
+                <a href="https://www.microsoft.com/en-us/research/">Yinuo Wang</a><sup>1*</sup>&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Haoxing_Ye1">Haoxing Ye</a>
+                <a href="https://www.microsoft.com/en-us/research/">Ji Li</a><sup>5</sup>&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=NeCCx-kAAAAJ&hl=en">Chao Zhang</a>
+                <sup>4</sup>&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://binwangthss.github.io/">Bin Wang</a>
+                <sup>1</sup>&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
                 <a href="https://www.microsoft.com/en-us/research/people/yuyua/">Yuhui Yuan</a>
-                <sup>1,2</sup>&nbsp;&nbsp;&nbsp;
+                <sup>6*</sup>&nbsp;&nbsp;&nbsp;
               </span>
-              <span class="author-block">
-                <a href="https://www.microsoft.com/en-us/research/people/doch/">Dong Chen</a>
-                <sup>1,2</sup>&nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://jianminbao.github.io/">Jianmin Bao</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Sirui_Zhang1">Sirui Zhang</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Yanbin_Wang5">Yanbin Wang</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Lin_Liang2">Lin Liang</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://www.microsoft.com/en-us/research/people/lijuanw/">Lijuan Wang</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://sites.google.com/a/usc.edu/jili/">Ji Li</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://thusigsiclab.github.io/thu.github.io/introduction.html">Xiu Li</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://www.icst.pku.edu.cn/zlian/">Zhouhui Lian</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://www.gaohuang.net/">Gao Huang</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://www.microsoft.com/en-us/research/people/bainguo/">Baining Guo</a>
-                &nbsp;&nbsp;&nbsp;
-              </span>
+
+
               <br>
               <span class="is-size-6 publication-authors">
-                <sup>1</sup><span>equal technical contribution&nbsp;&nbsp;&nbsp;</span>
-              </span>
-              <span class="is-size-6 publication-authors">
-                <sup>2</sup><span>project lead&nbsp;&nbsp;&nbsp;</span>
+                <sup>*</sup><span>Work done at Microsoft Research Asia.&nbsp;</span>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup> </sup>Microsoft Research
-                Asia&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-              <span class="author-block"><sup> </sup>Tsinghua University&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-              <span class="author-block"><sup> </sup>Peking University&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-              <span class="author-block"><sup> </sup>University of Science and Technology of China</span>
+            <div style="display: inline;">
+              <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>2</sup>The Australian National University,</span>
+              <span class="author-block"><sup>3</sup>The University of Electro-Communications Tokyo,</span>
+            </div>
+            <br>
+            <span class="author-block"><sup>4</sup>Peking University,</span>
+            <span class="author-block"><sup>5</sup>Microsoft Research,</span>
+            <span class="author-block"><sup>6</sup>Canva Research</span>
+          </div>
+
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">✨ICCV 2025✨</span>
             </div>
 
             <div class="column has-text-centered">
@@ -297,7 +278,7 @@
                 </span>
 
                 <span class="link-block">
-                  <a href="https://github.com/microsoft/art-msra"
+                  <a href="https://github.com/KemingWu/HybridLayout"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -311,7 +292,7 @@
                     <span class="icon">
                       🚀
                     </span>
-                    <span>Demo</span>
+                    <span>Huggingface</span>
                   </a>
                 </span>
 
@@ -410,25 +391,69 @@
   <br>
   <br> -->
 
-  <div class="container-row">
-    <!-- <img src="static/img/Real/cake.png" alt="Image 1" style="height: 445px; width: auto;">
-    <img src="static/img/Real/table.png" alt="Image 2" style="height: 445px; width: auto;"> -->
-    <img src="static/img/2_26_new/1.png" alt="Image 1">
-    <img src="static/img/2_26_new/2.png" alt="Image 2">
-    <img src="static/img/2_26_new/3.png" alt="Image 3">
-    <img src="static/img/2_26_new/4.png" alt="Image 4">
+  <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 1">
+          <img src="static/img/teaser/instance_diff_example.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 2">
+          <img src="static/img/teaser/dog_ours.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 3">
+            <img src="static/img/teaser/sa_11143675_style7.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 4">
+            <img src="static/img/teaser/sa_11143664_style2.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 5">
+            <img src="static/img/teaser/sa_11143662_style2.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="container-row">
-    <img src="static/img/2_26_new/5.png" alt="Image 5">
-    <img src="static/img/2_26_new/6.png" alt="Image 6">
-    <img src="static/img/2_26_new/7.png" alt="Image 7">
-    <img src="static/img/2_26_new/8.png" alt="Image 8">
-  </div>
+</section>
 
-  <div class="iframe-container">
-    <iframe src="https://svgedit.netlify.app/editor/index.html?storagePrompt=false&url=https://raw.githubusercontent.com/WYBar/gradiodemo_svg/main/1733809197842.svg" 
-            width="1480px" height="650px"></iframe>
+    <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 6">
+          <img src="static/img/teaser/sa_11143631_style6.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 7">
+          <img src="static/img/teaser/sa_11143576_style4.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 8">
+            <img src="static/img/teaser/sa_11143554_style7.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 9">
+            <img src="static/img/teaser/sa_11143536_style8.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+        <div class="item 10">
+            <img src="static/img/teaser/sa_11143524_style7.jpg" alt="Animated GIF" style="height: 100%;" />
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
+<!--  <div class="container-row">-->
+<!--    <img src="static/img/teaser/instance_diff_example.jpg" alt="Image 1">-->
+<!--    <img src="static/img/teaser/dog_ours.jpg" alt="Image 2">-->
+<!--    <img src="static/img/teaser/sa_11143675_style7.jpg" alt="Image 3">-->
+<!--    <img src="static/img/teaser/sa_11143664_style2.jpg" alt="Image 4">-->
+<!--    <img src="static/img/teaser/sa_11143662_style2.jpg" alt="Image 5">-->
+<!--  </div>-->
+<!--  <div class="container-row">-->
+<!--    <img src="static/img/teaser/sa_11143631_style6.jpg" alt="Image 6">-->
+<!--    <img src="static/img/teaser/sa_11143576_style4.jpg" alt="Image 7">-->
+<!--    <img src="static/img/teaser/sa_11143554_style7.jpg" alt="Image 8">-->
+<!--    <img src="static/img/teaser/sa_11143536_style8.jpg" alt="Image 9">-->
+<!--    <img src="static/img/teaser/sa_11143524_style7.jpg" alt="Image 10">-->
+<!--  </div>-->
+
 
   <br>
 
@@ -440,30 +465,29 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Multi-layer image generation is a fundamental task that enables users to isolate, select, and edit
-              specific image layers, thereby revolutionizing interactions with generative models. In this paper, we
-              introduce the Anonymous Region Transformer (ART), which facilitates the direct generation of variable
-              multi-layer transparent images based on a global text prompt and an anonymous region layout.
+              Text-to-image generation models often struggle to interpret spatially aware text prompts effectively.
+              To overcome this, existing approaches typically require millions of high-quality semantic layout annotations consisting of bounding boxes and regional prompts.
+              This paper shows that the large amounts of regional prompts are non-necessary for the latest diffusion transformers like SD3 or FLUX.
             </p>
             <p>
-              Inspired by Schema theory, this anonymous region layout allows the generative model to autonomously
-              determine which set of visual tokens should align with which text tokens, which is in contrast to the
-              previously dominant semantic layout for the image generation task.
-            </p>
+              In this paper, we propose an efficient hybrid layout control framework for diffusion transformers.
+              Our approach drastically reduces need for extensive layout annotations and minimizes reliance on regional prompt annotations—incurring only minimal additional computational cost during inference—while maintaining high-quality layout adherence.
+              Our key insight is to break the layout-control task into three sequential stages:
+              first, generating the target objects within the designated regions specified by an anonymous layout;
+              second, refining these outputs to ensure they strictly adhere to the regional prompts in the semantic layout;
+              and last, improving the aesthetics.
+              </p>
             <p>
-              In addition, the layer-wise region crop mechanism, which only selects the visual tokens belonging to each
-              anonymous region, significantly reduces attention computation costs and enables the efficient generation
-              of images with numerous distinct layers (e.g., 50+). When compared to the full attention approach, our
-              method is over 12 times faster and exhibits fewer layer conflicts.
+              Building on this insight,
+              we propose a hybrid layout control scheme that first fine-tunes the DiTs (e.g., FLUX) to follow an anonymous layout,
+              then continues fine-tuning the DiTs to follow the semantic layout, and finally includes a quality-tuning stage to enhance visual aesthetics.
+              We show that this hybrid design is highly data-efficient, as we find only using a small amount of semantic layout annotations is sufficient,
+              thereby significantly reducing dependency on regional prompts.
+              In addition, we propose an efficient regional diffusion transformer to encode the spatial layout information using just a set of lower-resolution regional tokens instead of various carefully designed layout tokens.
+              The region-wise diffusion loss over these regional tokens can guide the diffusion transformer learn to follow the given layout implicitly.
+              We empirically validate the effectiveness of our approach by comparing it with the latest version of SiamLayout and show that our method achieves better results while being more than 10x more data efficient and ensuring superior aesthetics.
             </p>
-            <p>
-              Furthermore, we propose a high-quality multi-layer transparent image autoencoder that supports the direct
-              encoding and decoding of the transparency of variable multi-layer images in a joint manner.
-            </p>
-            <p>
-              By enabling precise control and scalable layer generation, ART establishes a new paradigm for interactive
-              content creation.
-            </p>
+
           </div>
         </div>
       </div>
@@ -475,8 +499,8 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method Overview</h2>
-        <img src="./static/img/method/autoencoder.png" alt="pipeline" style="width: 60%;">
-        <img src="./static/img/method/transformer.png" alt="pipeline" style="width: 60%;">
+        <img src="./static/img/method/regional-dit-v2.png" alt="pipeline" style="width: 80%;">
+<!--        <img src="./static/img/method/downsample_dit.png" alt="pipeline" style="width: 80%;">-->
         <br>
       </div>
     </div>
@@ -492,50 +516,99 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Anonymous Layout</h1>
-          <img src="./static/img/Core/intro_layout.png" alt="pipeline" style="width: 80%;">
+        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Scalable Anonymous Layout-Image Data Engine</h1>
+          <br>
+          <img src="./static/img/Core/generic_layout_data_engine_v3.png" alt="pipeline" style="width: 80%;">
+          <br>
+      </div>
+    </div>
+
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Hybrid Layout Control</h1>
+          <img src="./static/img/Core/hybrid-layout-control.png" alt="pipeline" style="width: 80%;">
           <br>
       </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Flexible Layout Support</h1>
+        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Regional Token Downsample Scheme</h1>
           <br>
-          <img src="./static/img/Core/flexible_layout.PNG" alt="pipeline" style="width: 80%;">
-          <br>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Numerous Distinct Layers</h1>
-          <br>
-          <img src="./static/img/Core/numerous_1.PNG" alt="pipeline" style="width: 70%;">
-          <img src="./static/img/Core/numerous_2.png" alt="pipeline" style="width: 70%;">
+          <img src="./static/img/method/downsample_dit.png" alt="pipeline" style="width: 80%;">
           <br>
       </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Efficiency Compare</h1>
-          <img src="./static/img/Core/efficiency.png" alt="pipeline" style="width: 80%;">
+        <h2 class="title is-3">Qualitative Results</h2>
+      </div>
+    </div>
+
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Qualitative Comparison with SOTA Method</h1>
           <br>
+          <img src="./static/img/show/qualitative_comparison.png" alt="pipeline" style="width: 80%;">
+          <br>
+          <h3 style="text-align: center; font-size: 1.2em; font-weight: normal; line-height: 1.5;">
+            The rows correspond to different models: (a) SiamLayout w/ SD3, (b) Ours w/ SD3, (c) Ours w/ SD3 + Quality-tuning, (d) Ours w/ FLUX + Quality-tuning, and (e) Semantic Layout.
+          </h3>
+      </div>
+    </div>
+
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">More Qualitative Comparison Results</h1>
+          <br>
+            <div class="container-row">
+              <img src="static/img/show/cup_rp.jpg" alt="Image 1" style="width: 30%;">
+              <img src="static/img/show/dog_rp.jpg" alt="Image 2" style="width: 30%;">
+              <img src="static/img/show/regional_flux_1.jpg" alt="Image 3" style="width: 30%;">
+            </div>
+           <div class="container-row">
+              <img src="static/img/show/cup_ours.jpg" alt="Image 1" style="width: 30%;">
+              <img src="static/img/show/dog_ours.jpg" alt="Image 2" style="width: 30%;">
+              <img src="static/img/show/hybrid_layout_1.jpg" alt="Image 3" style="width: 30%;">
+            </div>
+<!--          <img src="./static/img/show/qualitative_comparison.png" alt="pipeline" style="width: 80%;">-->
+          <br>
+          <h3 style="text-align: center; font-size: 1.2em; font-weight: normal; line-height: 1.5;">
+            The rows correspond to different models: Regional-Prompting- FLUX (first row) and Ours (second row). Our approach achieves significantly bettera layout adherence while ensuring extremely high visual appealing.
+          </h3>
       </div>
     </div>
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Layer-wise Edit Demo Video</h2>
-        <div class="publication-video">
-          <video controls width="100%">
-            <source src="static/video/demo_en_v2.mp4" type="video/mp4">
-            Your computer not available for video.
-          </video>
-        </div>
+        <h2 class="title is-3">Quantitative Results</h2>
       </div>
     </div>
+
+     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Ours v.s. SOTA SiamLayout</h1>
+          <br>
+<!--          <embed src="./static/img/show/layout_user_study.pdf" type="application/pdf" width="100%" height="600px" />-->
+          <img src="./static/img/show/layout_user_study.png" alt="pipeline" style="width: 80%;">
+          <br>
+<!--          <h3 style="text-align: center; font-size: 1.2em; font-weight: normal; line-height: 1.5;">-->
+<!--            The rows correspond to different models: (a) SiamLayout w/ SD3, (b) Ours w/ SD3, (c) Ours w/ SD3 + Quality-tuning, (d) Ours w/ FLUX + Quality-tuning, and (e) Semantic Layout.-->
+<!--          </h3>-->
+      </div>
+    </div>
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">Layer-wise Edit Demo Video</h2>-->
+<!--        <div class="publication-video">-->
+<!--          <video controls width="100%">-->
+<!--            <source src="static/video/demo_en_v2.mp4" type="video/mp4">-->
+<!--            Your computer not available for video.-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <!-- <div class="columns is-centered">
       <div class="column is-2 ">
@@ -669,17 +742,11 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-        @article{pu2025art,
-          title={ART: Anonymous Region Transformer for Variable Multi-Layer Transparent Image Generation}, 
-          author={Yifan Pu and Yiming Zhao and Zhicong Tang and Ruihong Yin and Haoxing Ye and Yuhui Yuan and Dong Chen and Jianmin Bao and Sirui Zhang and Yanbin Wang and Lin Liang and Lijuan Wang and Ji Li and Xiu Li and Zhouhui Lian and Gao Huang and Baining Guo},
-          journal={arXiv preprint arXiv:2502.18364},
-          year={2025},
-        }
+
       </code></pre>
     </div>
   </section>
-  
-  
+
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
       <h2 style="text-align: center; font-size: 1.5em; font-weight: bold;">Acknowledgements</h1>
@@ -699,7 +766,7 @@
                   href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms of Use</a> | <a
                   data-v-28039ae4="" target="_blank"
                   href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks">Trademarks</a>
-              | <a data-v-28039ae4="">© Microsoft 2024</a></p>
+              | <a data-v-28039ae4="">© Microsoft 2025</a></p>
           <p data-v-28039ae4=""><span data-v-28039ae4=""><a data-v-28039ae4="" target="_blank"
                       href="https://www.microsoft.com/" aria-label="Microsoft"></a></span></p>
       </div>
